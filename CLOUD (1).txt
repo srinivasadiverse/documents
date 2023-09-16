@@ -1,0 +1,141 @@
+Github token : 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
+
+Restart postgres => sudo systemctl restart  postgresql.service    
+
+To check whether port is running or not
+         => sudo lsof -i -P -n | grep LISTEN 
+
+Search Command: find /directory -type f -name filename
+
+NPM => pm2 start --name=<dir name> npm -- start
+=> pm2 startup and => pm2save
+   
+This is for domain name (DEMO) app constant.js
+NIRF => tomcat.adhikrit.in/Nirf-backend-0.0.1-SNAPSHOT
+NAAC => tomcat.adhikrit.in/adiverse-erp-springboot-dit
+Faulty =>tomcat.adhikrit.in/faculty-dashboard-system-0.0.1
+
+Maven update installation :
+=>  M2_HOME='/opt/apache-maven-3.6.3'
+=>  PATH="$M2_HOME/bin:$PATH"
+=>  export PATH
+
+To Increase MEMORY: export MAVEN_OPTS="-Xmx4g -Xms2g"
+
+TEST-SALES: in app constant.js
+NIRF: test-tomcat.adhikrit.in/Nirf-backend-testsales-nirf
+NAAC : test-tomcat.adhikrit.in/adiverse-erp-springboot-testsales-naac
+Faculty: test-tomcat.adhikrit.in/faculty-dashboard-testsales
+Deployment: 
+   => npm run build
+   => npm run start:prod
+
+
+MAILS for Backend :
+adiversetechllp2023@gmail.com
+gcww chfq pfiq hlpw
+
+adhikritnaac@gmail.com
+usej bzwl qdwj ubjj
+Naac@123
+
+adhikritnirf@gmail.com
+debk dhzl kdtr vuwg
+
+nirfadhikrit@gmail.com
+adew jsyq wdqt epwa
+Nirf@123
+
+New Lines in Backend:Application Properties
+
+spring.datasource.hikari.max-lifetime=600000
+spring.datasource.testWhileIdle=true
+spring.datasource.test-on-borrow=true
+
+spring.datasource.hikari.leakDetectionThreshold=2000
+logging.level.com.zaxxer.hikari=DEBUG
+
+server.xml file => cd opt/tomcat/conf/
+
+To check storage in Cloud: 
+=>  df -Th
+=>  lsblk
+=> mpstat 
+in order to extend the xfs file system ran the following
+=>  sudo xfs_growfs -d /
+
+To see all tables in pgAdmin4:
+SELECT 'delete from '||tablename||';' FROM pg_catalog.pg_tables where tablespace is null and schemaname='public';
+
+=>  npm install pm2@latest -g
+
+Code to write in vi Dockerfile.dev
+
+# Fetching the latest node image on alpine linux
+FROM node:16.19.0
+
+# Declaring env
+ENV NODE_ENV development
+
+# Setting up the work directory
+WORKDIR /app
+
+# Installing dependencies
+COPY ./package.json /app
+RUN  npm install --save-dev optimize-css-assets-webpack-plugin --legacy-peer-deps
+
+# Copying all the files in our project
+COPY . .
+
+RUN npm run build:dll
+
+EXPOSE 3002
+# Starting our application
+CMD npm start
+
+
+Command to create Image name and to build dockerfile.dev 
+     =>  docker build -f Dockerfile.dev -t dockernirf .
+
+command to create a container and run the container 
+   =>  docker run -d -it  -p 3003:3003 --name nirfc1 dockernirf
+
+jboss: 9990
+
+CONNECT ON DATABASE database: (schemas->tables->roles)
+
+  ROLE_USER
+  ROLE_MODERATOR
+  ROLE_ADMIN
+  ROLE_STUDENT
+  ROLE_FACULTY
+  ROLE_HOD
+  ROLE_DEAN
+  ROLE_PRINCIPAL
+  ROLE_QUALITYADVISOR  
+
+TO GIVE PERMISSIONS TO PARTICULAR DIRECTORY :
+=>  chmod -R 777 directoryname 
+
+command for directory space : du -h dirname/
+
+List of Items to be covered as part of KT
+1) AWS EC2 creation - Free Tier
+2) JDK 17 Installation & Uninstallation
+3) NODE JS Installation & Uninstallation
+4) Maven Installation & Uninstallation
+5) Tomcat Installation & Uninstallation
+6) Postgres 14 Installation & Uninstallation
+7) Tomcat & Postgres security Group Inbound & outbound
+8) Tomcat & Postgres Outside world access
+9) Adding Storage(Memory) to EC2 Instance Process including commands to attach
+10) How to build & deploy of war into tomcat
+11) Updation of Backed Application path into Front End AppConstants file
+12) How to start(steps need to be covered) & stop Front End Applications 
+13) How to access Front End application from out side the AWS Server
+14) How to Add Source IP Address into Security Group
+15) Explain the Errors & Exceptions
+16) Git Branch creation and repository creation
+
+Commnad To Display performance,Memory,RAM in Linux : top 
+
